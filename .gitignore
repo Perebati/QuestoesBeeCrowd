@@ -1,1 +1,5 @@
-.vscode/
+#Vscode
+.vscode
+
+#execs
+*.exe

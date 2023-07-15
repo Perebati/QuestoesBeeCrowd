@@ -1,35 +1,23 @@
+#include <algorithm>
 #include <iostream>
-#include <string>
 
-std::string desembaralharString(const std::string& linha) {
-    std::string desembaralhada;
-    int meio = linha.length() / 2;
-    
-    // Percorre a metade direita da linha, adicionando os caracteres na ordem correta
-    for (int i = meio - 1; i >= 0; i--) {
-        desembaralhada += linha[i];
-    }
-    
-    // Percorre a metade esquerda da linha, adicionando os caracteres na ordem correta
-    for (unsigned int i = linha.length() - 1; i >= meio; i--) {
-        desembaralhada += linha[i];
-    }
-    
-    return desembaralhada;
-}
+using namespace std;
 
-int main() {
-    int casos;
-    std::cin >> casos;
-    std::cin.ignore(); // Ignora o caractere de quebra de linha após a leitura do número de casos
-    
-    for (int i = 0; i < casos; i++) {
-        std::string linha;
-        std::getline(std::cin, linha);
-        
-        std::string desembaralhada = desembaralharString(linha);
-        std::cout << desembaralhada << std::endl;
+int main(){
+    int N;
+    string frase;
+
+    cin >> N;
+    cin.ignore();
+
+    for(int i = 0; i < N; ++i){
+        getline(cin, frase);
+
+        reverse(frase.begin(), frase.begin() + frase.length()/2);
+        reverse(frase.begin() + frase.length()/2, frase.end());
+
+        cout << frase << endl;
     }
-    
+
     return 0;
 }

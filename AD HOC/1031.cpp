@@ -1,34 +1,23 @@
-#include <iostream>
-#include <vector>
+#include <stdio.h>
 
-using namespace std;
+int remaining(int n, int k) {
+    int r = 0;
+    for (int i = 1; i < n; i++)
+        r = (r + k) % i;
+    return r;
+}
 
-int main()
-{
-    vector<int> entrada;
-    vector<int> aux;
-    int regioes = 0;
-
-    while(cin >> regioes)
-    {
-        fill(entrada.begin(), entrada.end(), 0);
-        fill(aux.begin(), aux.end(), 0);
-
-        if(regioes == 0)
-        {
-            return 0;
-        }
-
-        for(int i = 0; i < regioes; i++)
-        {
-            entrada[i] = i;
-        }
-
-        //Aqui começa a matematica
-        //como entrar m?
-        //inconpleto
+int main(){
+    int n, y;
+    while(1){
+           scanf("%d",&n);
+           if(n == 0) break;
+           y = 1;
+           for(;;){
+                   if(remaining(n, y) != 13) y++;
+                   else break;
+           }
+           printf("%d\n",y);
     }
-
-
     return 0;
 }

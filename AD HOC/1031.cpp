@@ -14,7 +14,7 @@ int main(){
            if(n == 0) break;
            y = 1;
            for(;;){
-                   if(remaining(n, y) != 13) y++;
+                   if(remaining(n, y) != 11) y++;
                    else break;
            }
            printf("%d\n",y);
